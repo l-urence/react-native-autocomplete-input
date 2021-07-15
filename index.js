@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, Platform, StyleSheet, Text, TextInput, View, ViewPropTypes } from 'react-native';
+import { Platform, StyleSheet, Text, TextInput, View, ViewPropTypes } from 'react-native';
+import { FlatList } from "react-native-gesture-handler";
+
 
 export const AutocompleteInput = (props) => {
   function renderResultList(data, listProps) {
     const { style, ...flatListProps } = listProps;
 
-    return <FlatList data={data} style={[styles.list, style]} {...flatListProps} />;
+    return <View><FlatList data={data} style={[styles.list, style]} {...flatListProps} /></View>;
   }
 
   function renderTextInput() {
